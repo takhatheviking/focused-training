@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Moliyaviy savodxonlik treningi — 11-oktyabr 2026, ISFT instituti. Qarz, nasya va tartibsiz xarajatdan chiqish, 2027-yil uchun shaxsiy moliyaviy reja.">
+<title>Moliyaviy Savodxonlik — 11-oktyabr 2026 | Focused</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* ============================================================
+       Focused / Focused.uz brand palette
+       Communicated by Viking on 2026-09-29
+    ============================================================ */
+    --brand: #32a064;            /* primary green — CTA, accents, links */
+    --brand-hover: #278553;      /* darker green for hover */
+    --brand-soft: #ebf6f0;       /* very light mint — section backgrounds */
+    --brand-tint: rgba(50, 160, 100, 0.10);
+    --brand-glow: rgba(50, 160, 100, 0.25);
+
+    --ink: #000000;              /* strong headings */
+    --text: #303030;             /* body text */
+    --text-muted: #6b7280;       /* secondary */
+    --text-faint: #9ca3af;       /* placeholders, hints */
+
+    --bg: #ffffff;               /* page background */
+    --bg-alt: var(--brand-soft); /* alternating sections */
+    --bg-card: #ffffff;
+    --bg-input: #ffffff;
+
+    --border: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.14);
+    --border-focus: var(--brand);
+
+    --error: #c84b4b;
+    --error-soft: #fef2f2;
+
+    --font: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --radius: 16px;
+    --radius-sm: 12px;
+    --radius-xs: 8px;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.10);
+    --shadow-brand: 0 12px 28px rgba(50, 160, 100, 0.22);
+
+    --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding-bottom: calc(80px + var(--safe-bottom));
+  }
+
+  /* Subtle ambient */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(50, 160, 100, 0.06), transparent 55%),
+      radial-gradient(ellipse at 0% 100%, rgba(50, 160, 100, 0.04), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============================================================
+     HEADER
+  ============================================================ */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding-top: var(--safe-top);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    max-width: 1120px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .brand__mark {
+    width: 36px;
+    height: 36px;
+    background: var(--brand);
+    color: #ffffff;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+  }
+
+  .brand__text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .brand__text small {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .lang-switch {
+    display: flex;
+    background: var(--brand-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 3px;
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+
+  .lang-switch button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: inherit;
+  }
+
+  .lang-switch button.active {
+    background: var(--brand);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .header__cta {
+    background: var(--brand);
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .header__cta:hover {
+    background: var(--brand-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px var(--brand-glow);
+  }
+
+  @media (max-width: 640px) {
+    .header__cta { display: none; }
+    .header__inner { padding: 14px 20px; }
+    .brand__text small { display: none; }
+  }
+
+  /* ============================================================
+     HERO
+  ============================================================ */
+  .hero {
+    padding: 96px 0 100px;
+    position: relative;
+  }
+
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--brand-soft);
+    color: var(--brand-hover);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 32px;
+    border: 1px solid var(--brand-tint);
+  }
+
+  .hero__eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--brand);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--brand-glow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero__title {
+    font-size: clamp(36px, 5.5vw, 68px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    max-width: 920px;
+    color: var(--ink);
+  }
+
+  .hero__title em {
+    font-style: normal;
+    color: var(--brand);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero__title em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--brand-soft);
+    z-index: -1;
+  }
+
+  .hero__subhead {
+    font-size: clamp(16px, 1.7vw, 19px);
+    line-height: 1.55;
+    color: var(--text);
+    max-width: 720px;
+    margin-bottom: 40px;
+  }
+
+  .hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .chip__dot {
+    width: 6px;
+    height: 6px;
+    background: var(--brand);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero__cta-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--brand);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 18px 32px;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px var(--brand-glow);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-brand);
+  }
+
+  .btn-primary svg { width: 16px; height: 16px; }
+
+  .hero__meta {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .hero__meta strong { color: var(--ink); font-weight: 700; }
+
+  /* ============================================================
+     SECTION shared
+  ============================================================ */
+  section {
+    padding: 88px 0;
+    position: relative;
+  }
+
+  .section__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+  }
+
+  .section__kicker::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--brand);
+  }
+
+  .section__title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    max-width: 780px;
+    color: var(--ink);
+  }
+
+  .section__lead {
+    font-size: 16px;
+    color: var(--text);
+    max-width: 640px;
+    margin-bottom: 48px;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     PROBLEMS
+  ============================================================ */
+  .problems {
+    background: var(--bg-alt);
+  }
+
+  .problems__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .problem-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .problem-card:hover {
+    border-color: var(--brand-tint);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .problem-card__num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--brand);
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .problem-card__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .problems__bridge {
+    margin-top: 48px;
+    padding: 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brand);
+    border-radius: var(--radius);
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 780px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ============================================================
+     OUTCOMES
+  ============================================================ */
+  .outcomes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .outcome-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .outcome-card:hover {
+    border-color: var(--brand-tint);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .outcome-card__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--brand);
+    color: #ffffff;
+    border-radius: 10px;
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .outcome-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .outcome-card__desc {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .outcomes__note {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: var(--brand-soft);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 780px;
+    border-left: 2px solid var(--brand);
+  }
+
+  /* ============================================================
+     SCHEDULE
+  ============================================================ */
+  .schedule {
+    background: var(--bg-alt);
+  }
+
+  .schedule__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 860px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .schedule__row {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 24px;
+    padding: 20px 28px;
+    align-items: center;
+    transition: background 200ms ease;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .schedule__row:last-child { border-bottom: none; }
+  .schedule__row:hover { background: var(--brand-soft); }
+
+  .schedule__row--highlight {
+    background: rgba(50, 160, 100, 0.05);
+  }
+  .schedule__row--highlight:hover {
+    background: var(--brand-soft);
+  }
+
+  .schedule__time {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brand);
+  }
+
+  .schedule__topic {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .schedule__speaker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 560px) {
+    .schedule__row {
+      grid-template-columns: 70px 1fr;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    .schedule__speaker {
+      grid-column: 2;
+      margin-top: 4px;
+    }
+  }
+
+  /* ============================================================
+     FAQ
+  ============================================================ */
+  .faq__list {
+    max-width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-item[open] {
+    border-color: var(--brand-tint);
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq-item summary {
+    padding: 22px 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    list-style: none;
+    user-select: none;
+    color: var(--ink);
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--brand);
+    border-bottom: 2px solid var(--brand);
+    transform: rotate(45deg);
+    transition: transform var(--transition);
+    flex-shrink: 0;
+    margin-right: 4px;
+  }
+
+  .faq-item[open] summary::after {
+    transform: rotate(-135deg);
+  }
+
+  .faq-item__body {
+    padding: 0 28px 24px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  /* ============================================================
+     FORM
+  ============================================================ */
+  .form-section {
+    background: var(--bg-alt);
+    padding-bottom: 120px;
+  }
+
+  .form-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .form-wrap .section__kicker,
+  .form-wrap .section__title {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-wrap .section__kicker { display: inline-flex; }
+  .form-wrap .section__lead { margin-left: auto; margin-right: auto; }
+
+  .form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 44px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--brand);
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .field__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .field__label .required {
+    color: var(--brand);
+    margin-left: 3px;
+  }
+
+  .field__input,
+  .field__textarea,
+  .field__select {
+    background: var(--bg-input);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 14px;
+    padding: 14px 16px;
+    transition: var(--transition);
+    width: 100%;
+    resize: none;
+  }
+
+  .field__input:hover,
+  .field__textarea:hover,
+  .field__select:hover {
+    border-color: var(--text-muted);
+  }
+
+  .field__input:focus,
+  .field__textarea:focus,
+  .field__select:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 4px var(--brand-tint);
+  }
+
+  .field__input::placeholder,
+  .field__textarea::placeholder {
+    color: var(--text-faint);
+  }
+
+  .field__textarea { min-height: 100px; line-height: 1.5; }
+
+  .field__select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%2332a064' stroke-width='2'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    padding-right: 44px;
+    cursor: pointer;
+  }
+
+  .field--invalid .field__input,
+  .field--invalid .field__textarea,
+  .field--invalid .field__select {
+    border-color: var(--error);
+    background: var(--error-soft);
+  }
+
+  .field__error {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--error);
+    letter-spacing: 0.05em;
+    display: none;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+
+  .field--invalid .field__error { display: block; }
+
+  /* Radio pills for channel */
+  .radio-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .radio-pill {
+    position: relative;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .radio-pill input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio-pill label {
+    display: block;
+    padding: 14px 20px;
+    text-align: center;
+    background: var(--bg-input);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .radio-pill input:checked + label {
+    background: var(--brand-soft);
+    border-color: var(--brand);
+    color: var(--brand-hover);
+    font-weight: 700;
+  }
+
+  .radio-pill label:hover {
+    border-color: var(--text-muted);
+    color: var(--ink);
+  }
+
+  /* Consent */
+  .consent {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 24px 0 28px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    cursor: pointer;
+  }
+
+  .consent input {
+    margin-top: 3px;
+    accent-color: var(--brand);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .form-submit {
+    width: 100%;
+    background: var(--brand);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 18px 28px;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px var(--brand-glow);
+  }
+
+  .form-submit:hover:not(:disabled) {
+    background: var(--brand-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-brand);
+  }
+
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .form-submit__loader {
+    display: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  .form-submit.is-loading .form-submit__text,
+  .form-submit.is-loading svg { display: none; }
+  .form-submit.is-loading .form-submit__loader { display: block; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ============================================================
+     STICKY CTA (mobile)
+  ============================================================ */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    padding: 14px 16px calc(14px + var(--safe-bottom));
+    z-index: 40;
+    display: none;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (max-width: 768px) {
+    .sticky-cta { display: block; }
+  }
+
+  .sticky-cta a {
+    display: block;
+    width: 100%;
+    background: var(--brand);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 16px var(--brand-glow);
+  }
+
+  .sticky-cta.hidden { display: none !important; }
+
+  /* ============================================================
+     MODAL & TOAST
+  ============================================================ */
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 24px;
+    animation: fadeIn 240ms ease-out;
+  }
+
+  .modal.is-open { display: flex; }
+
+  .modal__card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 320ms cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .modal__icon {
+    width: 72px;
+    height: 72px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 24px;
+    border: 1px solid var(--brand-tint);
+  }
+
+  .modal__icon svg { width: 32px; height: 32px; }
+
+  .modal__title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+
+  .modal__desc {
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+
+  .modal__btn {
+    background: var(--brand);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 14px 32px;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .modal__btn:hover { background: var(--brand-hover); }
+
+  .toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: var(--ink);
+    border: 1px solid var(--error);
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    z-index: 200;
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-lg);
+    max-width: 90vw;
+    font-weight: 500;
+  }
+
+  .toast.is-visible { transform: translateX(-50%) translateY(0); }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  /* Footer */
+  .footer {
+    padding: 60px 0 40px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.7;
+    background: var(--bg);
+  }
+
+  .footer strong { color: var(--ink); font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    section { padding: 56px 0; }
+    .hero { padding: 48px 0 72px; }
+    .form-card { padding: 28px 24px; }
+    .modal__card { padding: 36px 28px; }
+    .schedule__row { padding: 14px 20px; }
+  }
+
+
+  /* ============================================================
+     DARK SECTIONS (hero, speakers, footer)
+  ============================================================ */
+  .section--dark {
+    background: #0a0a0a;
+    color: #e8e8e8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section--dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(50, 160, 100, 0.15), transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(50, 160, 100, 0.08), transparent 55%);
+    pointer-events: none;
+  }
+
+  .section--dark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .section--dark > .container { position: relative; z-index: 2; }
+
+  .section--dark .section__title,
+  .section--dark .hero__title { color: #ffffff; }
+  .section--dark .hero__subhead,
+  .section--dark .section__lead { color: rgba(232, 232, 232, 0.75); }
+  .section--dark .hero__meta { color: rgba(232, 232, 232, 0.6); }
+  .section--dark .hero__meta strong { color: #ffffff; }
+
+  .section--dark .chip {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #e8e8e8;
+    backdrop-filter: blur(8px);
+  }
+
+  .section--dark .hero__eyebrow {
+    background: rgba(50, 160, 100, 0.15);
+    border-color: rgba(50, 160, 100, 0.35);
+    color: #6ddb99;
+  }
+
+  .section--dark .hero__title em {
+    color: #6ddb99;
+  }
+  .section--dark .hero__title em::after {
+    background: rgba(50, 160, 100, 0.22);
+  }
+
+  /* ============================================================
+     HERO — new two-column layout with speaker photo
+  ============================================================ */
+  .hero {
+    padding: 88px 0 96px;
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .hero__content { min-width: 0; }
+
+  .hero__portrait {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow:
+      0 30px 60px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .hero__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  .hero__portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(10, 10, 10, 0.85) 100%);
+    pointer-events: none;
+  }
+
+  .hero__portrait-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 2;
+  }
+
+  .hero__portrait-name {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero__portrait-role {
+    color: #6ddb99;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero__portrait {
+      max-width: 420px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+    }
+  }
+
+  /* ============================================================
+     SPEAKERS block — dark
+  ============================================================ */
+  .speakers {
+    padding: 96px 0;
+  }
+
+  .speakers__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .speaker-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .speaker-card:hover {
+    border-color: rgba(50, 160, 100, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .speaker-card__photo {
+    aspect-ratio: 16 / 11;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .speaker-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+  }
+
+  .speaker-card__photo--placeholder {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, rgba(50, 160, 100, 0.15), rgba(50, 160, 100, 0.02));
+  }
+
+  .speaker-card__initial {
+    font-family: var(--mono);
+    font-size: 88px;
+    font-weight: 800;
+    color: rgba(50, 160, 100, 0.35);
+    letter-spacing: -0.05em;
+  }
+
+  .speaker-card__body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .speaker-card__name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .speaker-card__role {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6ddb99;
+    font-weight: 600;
+  }
+
+  .speaker-card__desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(232, 232, 232, 0.75);
+    margin-top: 6px;
+  }
+
+  .speaker-card__slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+
+  .speaker-card__slot {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 5px 10px;
+    background: rgba(50, 160, 100, 0.12);
+    border: 1px solid rgba(50, 160, 100, 0.25);
+    border-radius: 100px;
+    color: #6ddb99;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+  }
+
+  @media (max-width: 720px) {
+    .speakers__grid { grid-template-columns: 1fr; }
+    .speaker-card__body { padding: 22px; }
+  }
+
+  /* ============================================================
+     FOOTER — dark
+  ============================================================ */
+  .footer.section--dark {
+    padding: 48px 0 40px;
+    border-top: none;
+  }
+
+  .footer.section--dark p {
+    color: rgba(232, 232, 232, 0.5);
+  }
+
+  .footer.section--dark strong {
+    color: #ffffff;
+  }
+
+
+  /* Logo */
+  .brand__logo { height: 30px; width: auto; display: block; }
+  .brand__logo + .brand__mark + .brand__text .brand__name { display: none; }
+  .brand__logo[style*="none"] + .brand__mark + .brand__text .brand__name { display: block; }
+  .brand__text { border-left: 1px solid var(--border-strong); padding-left: 12px; }
+  .brand__logo[style*="none"] + .brand__mark + .brand__text { border-left: none; padding-left: 0; }
+
+  /* Fix: arrow icon inside submit button */
+  .form-submit svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* Fix: toast must be fully hidden when inactive */
+  .toast { opacity: 0; visibility: hidden; pointer-events: none;
+           transition: transform 320ms cubic-bezier(0.16,1,0.3,1), opacity 220ms ease, visibility 0s linear 320ms; }
+  .toast.is-visible { opacity: 1; visibility: visible; pointer-events: auto;
+           transition: transform 320ms cubic-bezier(0.16,1,0.3,1), opacity 220ms ease, visibility 0s; }
+
+
+  @media (max-width: 640px) {
+    .brand__logo ~ .brand__text { display: none; }
+    .brand__logo[style*="none"] ~ .brand__text { display: block; border-left: none; padding-left: 0; }
+  }
+
+  /* ============================================================
+     VIDEOS (YouTube, click-to-load facade)
+  ============================================================ */
+  .videos__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .videos__grid--single {
+    grid-template-columns: minmax(0, 820px);
+    justify-content: center;
+  }
+  .video-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .video-card__frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #0a0a0a;
+  }
+  .video-card__frame iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+  .video-card__facade {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0; padding: 0;
+    cursor: pointer;
+    background: #0a0a0a;
+  }
+  .video-card__facade img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+    transition: opacity var(--transition);
+  }
+  .video-card__facade:hover img { opacity: 1; }
+  .video-card__play {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 72px; height: 72px;
+    transform: translate(-50%, -50%);
+    background: var(--brand);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: transform var(--transition), background var(--transition);
+  }
+  .video-card__play svg { width: 26px; height: 26px; margin-left: 4px; fill: #ffffff; }
+  .video-card__facade:hover .video-card__play,
+  .video-card__facade:focus-visible .video-card__play {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: var(--brand-hover);
+  }
+  .video-card__facade:focus-visible { outline: 3px solid var(--brand); outline-offset: -3px; }
+  .video-card__body { padding: 20px 24px 24px; }
+  .video-card__speaker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .video-card__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  @media (max-width: 760px) {
+    .videos__grid { grid-template-columns: 1fr; }
+    .video-card__play { width: 60px; height: 60px; }
+  }
+
+  /* Dildora portrait is vertical — keep face in frame */
+  .speaker-card__photo img[src*="dildora"] { object-position: center 18%; }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#" class="brand">
+      <img class="brand__logo" src="https://focused.uz/logo.svg" alt="Focused.uz" height="30"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+      <div class="brand__mark" style="display:none">F</div>
+      <div class="brand__text">
+        <strong class="brand__name">Focused.uz</strong>
+        <small data-i18n="brand.tag">Moliyaviy savodxonlik</small>
+      </div>
+    </a>
+    <div class="header__actions">
+      <div class="lang-switch">
+        <button data-lang="uz" class="active">UZ</button>
+        <button data-lang="ru">RU</button>
+      </div>
+      <a href="#apply" class="header__cta" data-i18n="header.cta">Joyimni band qilish</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero (dark) -->
+<section class="hero section--dark">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <div class="hero__eyebrow" data-i18n="hero.eyebrow">11-oktyabr 2026 · 15:00–19:00 · ISFT instituti</div>
+        <h1 class="hero__title">
+          <span data-i18n="hero.title1">Qarz, nasya va tartibsiz xarajatdan chiqish:</span>
+          <em data-i18n="hero.title2">2027-yil uchun shaxsiy moliyaviy reja</em>
+        </h1>
+        <p class="hero__subhead" data-i18n="hero.subhead">
+          Bir kunda pul oqimingizni ko'ring, qarz va nasya bo'yicha 90 kunlik birinchi qadamlarni yozing, tartibsiz xarajat triggerlarini aniqlang va 2027 rejangizning bir sahifalik loyihasini tuzing.
+        </p>
+        <div class="hero__chips">
+          <div class="chip"><span class="chip__dot"></span><span data-i18n="chip.duration">4 soat amaliy ish</span></div>
+          <div class="chip"><span class="chip__dot"></span><span data-i18n="chip.speakers">2 spiker</span></div>
+          <div class="chip"><span class="chip__dot"></span><span data-i18n="chip.workbook">Ish daftari va shablonlar</span></div>
+          <div class="chip"><span class="chip__dot"></span><span data-i18n="chip.format">100 ishtirokchilik format</span></div>
+        </div>
+        <div class="hero__cta-row">
+          <a href="#apply" class="btn-primary">
+            <span data-i18n="hero.cta">Joyimni band qilish</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <div class="hero__meta">
+            <span data-i18n="hero.meta1">Chipta</span> <strong>50 000 so'm</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__portrait">
+        <picture>
+          <source srcset="assets/jamshid-hero.webp" type="image/webp">
+          <img src="assets/jamshid-hero.jpg" alt="Jamshid To'ychiyev" loading="eager" width="900" height="1125">
+        </picture>
+        <div class="hero__portrait-badge">
+          <div class="hero__portrait-name">Jamshid To'ychiyev</div>
+          <div class="hero__portrait-role" data-i18n="hero.portrait.role">Bosh spiker · moliyaviy tashxis</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Videos (hidden until videos.js has at least one url) -->
+<section class="videos" id="videos" hidden>
+  <div class="container">
+    <div class="section__kicker" data-i18n="videos.kicker">Video</div>
+    <h2 class="section__title" data-i18n="videos.title">Trening qanday o'tadi</h2>
+    <div class="videos__grid" id="videos-grid"></div>
+  </div>
+</section>
+
+<!-- Problems -->
+<section class="problems">
+  <div class="container">
+    <div class="section__kicker" data-i18n="problems.kicker">Muammolar</div>
+    <h2 class="section__title" data-i18n="problems.title">Quyidagilardan biri sizda bormi?</h2>
+
+    <div class="problems__grid">
+      <div class="problem-card">
+        <div class="problem-card__num">01</div>
+        <p class="problem-card__text" data-i18n="p.1">Ish haqi qayerga ketganini oy oxirida tushunmaysiz.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__num">02</div>
+        <p class="problem-card__text" data-i18n="p.2">Nasya to'lovlari alohida kichik ko'rinsa ham, birga kelganda bosim qiladi.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__num">03</div>
+        <p class="problem-card__text" data-i18n="p.3">Budjet tuzishni boshlaysiz, lekin bir necha kundan keyin tashlab qo'yasiz.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__num">04</div>
+        <p class="problem-card__text" data-i18n="p.4">Kayfiyat, charchoq yoki "boshqalarda bor" hissi bilan xarid qilib, keyin afsuslanasiz.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__num">05</div>
+        <p class="problem-card__text" data-i18n="p.5">Oilada pul haqida gap ochilsa, suhbat tezda himoya yoki janjalga aylanadi.</p>
+      </div>
+    </div>
+
+    <p class="problems__bridge" data-i18n="problems.bridge">
+      Muammo iroda yetishmasligida bo'lmasligi mumkin. Ko'pincha raqamlar ko'rinmaydi, xarajat triggeri anglanmaydi va qarorlar uchun oddiy tizim yo'q. Treningda shu uch qismni bir joyga yig'amiz.
+    </p>
+  </div>
+</section>
+
+<!-- Outcomes -->
+<section id="outcomes">
+  <div class="container">
+    <div class="section__kicker" data-i18n="outcomes.kicker">Natijalar</div>
+    <h2 class="section__title" data-i18n="outcomes.title">11-oktyabr kuni qo'lingizda qoladigan 5 natija</h2>
+
+    <div class="outcomes__grid">
+      <div class="outcome-card">
+        <div class="outcome-card__num">01</div>
+        <h3 class="outcome-card__title" data-i18n="o.1.t">Pul oqimi xaritasi</h3>
+        <p class="outcome-card__desc" data-i18n="o.1.d">Kirim, majburiy to'lov, qarz/nasya va o'zgaruvchan xarajatlar bir ko'rinishda.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-card__num">02</div>
+        <h3 class="outcome-card__title" data-i18n="o.2.t">90 kunlik qarz/nasya ketma-ketligi</h3>
+        <p class="outcome-card__desc" data-i18n="o.2.d">Qaysi majburiyatdan, qaysi tartibda va qaysi birinchi qadam bilan boshlash loyihasi.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-card__num">03</div>
+        <h3 class="outcome-card__title" data-i18n="o.3.t">5 kategoriyali sodda budjet</h3>
+        <p class="outcome-card__desc" data-i18n="o.3.d">Kundalik hayotda yuritish mumkin bo'lgan minimal kategoriyalar.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-card__num">04</div>
+        <h3 class="outcome-card__title" data-i18n="o.4.t">Trigger → harakat → oqibat xaritasi</h3>
+        <p class="outcome-card__desc" data-i18n="o.4.d">Tartibsiz xarajat boshlanadigan vaziyat va unga qo'yiladigan yangi pauza.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-card__num">05</div>
+        <h3 class="outcome-card__title" data-i18n="o.5.t">Bir sahifalik 2027 reja loyihasi</h3>
+        <p class="outcome-card__desc" data-i18n="o.5.d">Bitta ustuvor maqsad, keyingi 7 kunlik tajriba va haftalik 15 daqiqalik nazorat.</p>
+      </div>
+    </div>
+
+    <p class="outcomes__note" data-i18n="outcomes.note">
+      Muhim: bu "tayyor individual moliyaviy maslahat" emas. Ishtirokchi berilgan metod va shablonlar yordamida o'z ma'lumotlari asosida birinchi versiyani tuzadi.
+    </p>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="section__kicker" data-i18n="schedule.kicker">Kun dasturi</div>
+    <h2 class="section__title" data-i18n="schedule.title">4 soatda: tashxisdan 2027 reja loyihasigacha</h2>
+
+    <div class="schedule__list">
+      <div class="schedule__row">
+        <div class="schedule__time">14:30</div>
+        <div class="schedule__topic" data-i18n="s.1.t">Check-in va joylashish</div>
+        <div class="schedule__speaker" data-i18n="s.1.s">Jamoa</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">15:00</div>
+        <div class="schedule__topic" data-i18n="s.2.t">Ochilish va ish qoidalari</div>
+        <div class="schedule__speaker" data-i18n="s.2.s">Moderator</div>
+      </div>
+      <div class="schedule__row schedule__row--highlight">
+        <div class="schedule__time">15:10</div>
+        <div class="schedule__topic" data-i18n="s.3.t">Moliyaviy tashxis · pul oqimi xaritasi</div>
+        <div class="schedule__speaker">Jamshid</div>
+      </div>
+      <div class="schedule__row schedule__row--highlight">
+        <div class="schedule__time">16:00</div>
+        <div class="schedule__topic" data-i18n="s.4.t">Pul xulqi va triggerlar</div>
+        <div class="schedule__speaker">Dildora</div>
+      </div>
+      <div class="schedule__row schedule__row--highlight">
+        <div class="schedule__time">16:50</div>
+        <div class="schedule__topic" data-i18n="s.5.t">Qarz/nasya va 90 kunlik ketma-ketlik</div>
+        <div class="schedule__speaker">Jamshid</div>
+      </div>
+      <div class="schedule__row schedule__row--highlight">
+        <div class="schedule__time">17:35</div>
+        <div class="schedule__topic" data-i18n="s.6.t">Yangi odat va oilaviy kelishuv</div>
+        <div class="schedule__speaker">Dildora</div>
+      </div>
+      <div class="schedule__row schedule__row--highlight">
+        <div class="schedule__time">18:05</div>
+        <div class="schedule__topic" data-i18n="s.7.t">Bir sahifalik 2027 reja</div>
+        <div class="schedule__speaker">Jamshid</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">18:50</div>
+        <div class="schedule__topic" data-i18n="s.8.t">Savol-javob</div>
+        <div class="schedule__speaker" data-i18n="s.8.s">Ikkalasi</div>
+      </div>
+      <div class="schedule__row">
+        <div class="schedule__time">19:00</div>
+        <div class="schedule__topic" data-i18n="s.9.t">Qat'iy tugash</div>
+        <div class="schedule__speaker" data-i18n="s.9.s">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section__kicker" data-i18n="faq.kicker">Savol-javob</div>
+    <h2 class="section__title" data-i18n="faq.title">Ko'p beriladigan savollar</h2>
+
+    <div class="faq__list">
+      <details class="faq-item">
+        <summary data-i18n="faq.1.q">Bu trening kim uchun?</summary>
+        <div class="faq-item__body" data-i18n="faq.1.a">Qarz/nasya bosimini tartiblash, pul oqimini ko'rish, tartibsiz xarajat sabablarini tushunish va 2027-yil uchun sodda reja tuzishni istaganlar uchun.</div>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.2.q">Trening qachon va qancha davom etadi?</summary>
+        <div class="faq-item__body" data-i18n="faq.2.a">11-oktyabr 2026. Check-in 14:30 da, asosiy dastur 15:00 da boshlanadi va 19:00 da tugaydi.</div>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.3.q">Nima olib kelishim kerak?</summary>
+        <div class="faq-item__body" data-i18n="faq.3.a">Telefon va ruchka yetarli. Xohlasangiz, faqat o'zingiz ko'rish uchun qarz/nasya va majburiy to'lovlar ro'yxatini olib keling.</div>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.4.q">Shaxsiy summalarimni aytishim kerakmi?</summary>
+        <div class="faq-item__body" data-i18n="faq.4.a">Yo'q. Mashqlarni o'zingiz uchun bajarasiz; shaxsiy summalarni guruh oldida ochiqlash majburiy emas.</div>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.5.q">Coffee break yoki tushlik bormi?</summary>
+        <div class="faq-item__body" data-i18n="faq.5.a">Yo'q, tadbirda lunch va coffee break rejalashtirilmagan. Ichimlik suvi mavjud.</div>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.6.q">Bu individual moliyaviy maslahatmi?</summary>
+        <div class="faq-item__body" data-i18n="faq.6.a">Yo'q. Trening ta'limiy formatda. Siz metod va shablonlar orqali o'z rejangizning birinchi versiyasini tuzasiz.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- Speakers (dark) -->
+<section class="speakers section--dark" id="speakers">
+  <div class="container">
+    <div class="section__kicker" data-i18n="speakers.kicker">Spikerlar</div>
+    <h2 class="section__title" data-i18n="speakers.title">Treningni ikki spiker olib boradi</h2>
+
+    <div class="speakers__grid">
+      <div class="speaker-card">
+        <div class="speaker-card__photo">
+          <picture>
+            <source srcset="assets/jamshid-speakers.webp" type="image/webp">
+            <img src="assets/jamshid-speakers.jpg" alt="Jamshid To'ychiyev" loading="lazy" width="800" height="533">
+          </picture>
+        </div>
+        <div class="speaker-card__body">
+          <div>
+            <div class="speaker-card__role" data-i18n="sp.jamshid.role">Moliyaviy tashxis · pul oqimi · 2027 reja</div>
+            <div class="speaker-card__name">Jamshid To'ychiyev</div>
+          </div>
+          <p class="speaker-card__desc" data-i18n="sp.jamshid.desc">
+            Moliyaviy tizim, pul oqimi, qarz va nasya ketma-ketligi hamda 2027 reja blokini olib boradi. Trening oxirida Focused kursi bo'yicha demo va taklifni ochiq ko'rsatadi.
+          </p>
+          <div class="speaker-card__slots">
+            <span class="speaker-card__slot">15:10</span>
+            <span class="speaker-card__slot">16:50</span>
+            <span class="speaker-card__slot">18:05</span>
+            <span class="speaker-card__slot">18:30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-card__photo">
+          <picture>
+            <source srcset="assets/dildora-speakers.webp" type="image/webp">
+            <img src="assets/dildora-speakers.jpg" alt="Dildora Sharapova" loading="lazy" width="800" height="1065">
+          </picture>
+        </div>
+        <div class="speaker-card__body">
+          <div>
+            <div class="speaker-card__role" data-i18n="sp.dildosh.role">Pul xulqi · triggerlar · oilaviy kelishuv</div>
+            <div class="speaker-card__name">Dildora Sharapova</div>
+          </div>
+          <p class="speaker-card__desc" data-i18n="sp.dildosh.desc">
+            Pul xulqi, tartibsiz xarajat triggerlari, aybdorlik, solishtirish va oilaviy pul suhbati blokini olib boradi. Kurs taklifiga mazmuniy ko'prik qiladi.
+          </p>
+          <div class="speaker-card__slots">
+            <span class="speaker-card__slot">16:00</span>
+            <span class="speaker-card__slot">17:35</span>
+            <span class="speaker-card__slot">18:20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Apply form -->
+<section class="form-section" id="apply">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="section__kicker" data-i18n="apply.kicker">Ariza topshirish</div>
+      <h2 class="section__title" data-i18n="apply.title">Joyingizni band qiling</h2>
+      <p class="section__lead" data-i18n="apply.lead">
+        Kontakt ma'lumotlaringizni qoldiring — menejer 24 soat ichida siz bilan bog'lanib, to'lov va tashkiliy tafsilotlarni tushuntiradi.
+      </p>
+
+      <form class="form-card" id="apply-form" novalidate>
+
+        <div class="field" data-field="name">
+          <label class="field__label" for="f-name">
+            <span data-i18n="f.name">Ism va familiya</span><span class="required">*</span>
+          </label>
+          <input type="text" class="field__input" id="f-name" name="name" required autocomplete="name" placeholder="Bekzod Sattorov">
+          <span class="field__error" data-i18n="err.required">Bu maydon majburiy</span>
+        </div>
+
+        <div class="field" data-field="phone">
+          <label class="field__label" for="f-phone">
+            <span data-i18n="f.phone">Telefon raqami</span><span class="required">*</span>
+          </label>
+          <input type="tel" class="field__input" id="f-phone" name="phone" required autocomplete="tel" placeholder="+998 90 123 45 67">
+          <span class="field__error" data-i18n="err.phone">To'g'ri telefon raqamini kiriting</span>
+        </div>
+
+        <div class="field" data-field="channel">
+          <label class="field__label">
+            <span data-i18n="f.channel">Qulay aloqa kanali</span><span class="required">*</span>
+          </label>
+          <div class="radio-group">
+            <div class="radio-pill">
+              <input type="radio" name="channel" id="ch-tg" value="Telegram" required>
+              <label for="ch-tg">Telegram</label>
+            </div>
+            <div class="radio-pill">
+              <input type="radio" name="channel" id="ch-call" value="Qo'ng'iroq">
+              <label for="ch-call" data-i18n="f.call">Qo'ng'iroq</label>
+            </div>
+          </div>
+          <span class="field__error" data-i18n="err.channel">Kanalni tanlang</span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-source">
+            <span data-i18n="f.source">Bizni qayerdan bildingiz?</span>
+          </label>
+          <select class="field__select" id="f-source" name="source">
+            <option value="" data-i18n="f.source.ph">Tanlang…</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Do'stlar" data-i18n="src.friends">Do'stlar / tanishlar</option>
+            <option value="Boshqa" data-i18n="src.other">Boshqa</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-pain">
+            <span data-i18n="f.pain">Moliyaviy holatingizda hozir eng katta muammo nima?</span>
+          </label>
+          <textarea class="field__textarea" id="f-pain" name="pain" placeholder="..." data-i18n-ph="f.pain.ph"></textarea>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="f-consent" name="consent" required>
+          <span data-i18n="f.consent">Shaxsiy ma'lumotlarni qayta ishlashga va menejer bilan bog'lanishga rozilik bildiraman.</span>
+        </label>
+
+        <button type="submit" class="form-submit" id="btn-submit">
+          <span class="form-submit__text" data-i18n="f.submit">Arizani yuborish</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span class="form-submit__loader"></span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer section--dark">
+  <div class="container">
+    <p><strong>Focused.uz</strong> · Moliyaviy Savodxonlik Trening · 11-oktyabr 2026</p>
+    <p data-i18n="footer.legal">Ta'limiy tadbir. Bu individual investitsiya, kredit, soliq yoki yuridik maslahat emas.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="#apply" data-i18n="sticky.cta">Joyimni band qilish — 50 000 so'm</a>
+</div>
+
+<!-- Success modal -->
+<div class="modal" id="modal-success" role="dialog" aria-modal="true">
+  <div class="modal__card">
+    <div class="modal__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3 class="modal__title" data-i18n="m.title">Ariza qabul qilindi</h3>
+    <p class="modal__desc" data-i18n="m.desc">
+      Rahmat! Menejer 24 soat ichida siz bilan tanlagan kanal orqali bog'lanib, to'lov va tashkiliy tafsilotlarni tushuntiradi.
+    </p>
+    <button class="modal__btn" id="modal-close" data-i18n="m.close">Tushunarli</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="alert"></div>
+
+<script src="config.js"></script>
+<script src="videos.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
