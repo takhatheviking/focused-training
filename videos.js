@@ -14,7 +14,7 @@
 
 window.FOCUSED_VIDEOS = [
   {
-    url: '',
+    url: 'https://youtu.be/dDd9SxFg42k',
     speaker: "Jamshid To'ychiyev",
     title_uz: "Avval raqamlarni ko'ramiz, keyin qaror qilamiz",
     title_ru: 'Сначала смотрим на цифры, потом решаем'
