@@ -20,7 +20,7 @@ window.FOCUSED_VIDEOS = [
     title_ru: 'Сначала смотрим на цифры, потом решаем'
   },
   {
-    url: '', // второе видео в монтаже
+    url: 'https://youtu.be/BgvV3zvc7EI', // второе видео в монтаже
     speaker: 'Dildora Sharapova',
     title_uz: "Tartibsiz xarajat ortida faqat matematika yo'q",
     title_ru: 'За хаотичными тратами стоит не только математика'
