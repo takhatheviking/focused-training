@@ -1,0 +1,480 @@
+# Oʻzbekcha (lotin). The bot fills {placeholders}; HTML tags <b>, <i>, <code>, <a> are allowed.
+
+# --- General ---
+choose_lang_all = "🌐 Выберите язык · Tilni tanlang · Choose your language"
+welcome = """Salom, {name}! 👋
+
+Men <b>Focused</b> tadbirlar botiman. Bu yerda yaqin tadbirlarni koʻrish, joy bron qilish va chipta olish mumkin.
+
+Quyidagi menyudan boʻlimni tanlang."""
+help = """<b>Qanday ishlaydi</b>
+
+1. «🎟 Tadbirlar» — tadbirni tanlang.
+2. «Chipta olish» tugmasini bosing, sonini tanlang va bronni tasdiqlang — toʻlov vaqtida joylar siz uchun band turadi.
+3. Bot koʻrsatgan kartaga summani oʻtkazing va chek skrinshotini shu yerga yuboring.
+4. Toʻlov tekshirilgach, bot QR-kodli chipta yuboradi — uni kirishda koʻrsating.
+
+Barcha chiptalar «🎫 Chiptalarim» boʻlimida.
+Savollar uchun: {support}"""
+cancelled = "Bekor qilindi."
+unknown_input = "Tushunolmadim 🙂 Menyudan kerakli boʻlimni tanlang."
+stale_button = "Bu tugma eskirgan. Boʻlimni menyudan qaytadan oching."
+saved = "Saqlandi ✅"
+cmd_start = "Asosiy menyu"
+cmd_my = "Chiptalarim"
+cmd_lang = "Tilni oʻzgartirish"
+cmd_help = "Qanday ishlaydi"
+
+# --- Buttons ---
+btn_events = "🎟 Tadbirlar"
+btn_my = "🎫 Chiptalarim"
+btn_lang = "🌐 Til"
+btn_help = "💬 Yordam"
+btn_admin = "⚙️ Admin panel"
+btn_checkin = "📷 Chiptalarni tekshirish"
+btn_back = "« Orqaga"
+btn_cancel = "✖️ Bekor qilish"
+btn_skip = "⏭ Oʻtkazib yuborish"
+btn_all_events = "« Barcha tadbirlar"
+btn_buy = "🎟 Chipta olish"
+btn_register = "✍️ Roʻyxatdan oʻtish"
+btn_my_booking = "⏳ Mening bronim"
+btn_share_contact = "📱 Raqamni yuborish"
+btn_confirm_booking = "✅ Bronni tasdiqlash"
+btn_send_receipt = "📎 Chek yuborish"
+btn_cancel_booking = "❌ Bronni bekor qilish"
+btn_already_paid = "📎 Toʻladim — chek yuborish"
+
+# --- Events ---
+events_title = "Yaqin tadbirlar ({n}):"
+no_events = "Hozircha ochiq tadbirlar yoʻq. Keyinroq qarab koʻring 🙌"
+map_link = "Xaritada ochish"
+price_free = "Bepul"
+price_from = "{price}dan"
+price_free_or_paid = "bepul va pullik chiptalar bor"
+seats_left = "Qolgan joylar: {n}"
+sold_out = "Joy qolmadi"
+sold_out_short = "joy yoʻq"
+left_short = "{n} ta qoldi"
+
+# --- Booking & payment ---
+choose_ticket_type = "Chipta turini tanlang:"
+ask_quantity = """Nechta chipta kerak?
+Turi: <b>{type}</b> · bittasi {price}"""
+ask_contact = "Bron qilish uchun telefon raqamingizni yuboring — pastdagi tugmani bosing. Raqam tashkilotchilarga siz bilan bogʻlanish va toʻlovni tekshirish uchun kerak."
+contact_saved = "Rahmat, raqam saqlandi ✅"
+booking_summary = """<b>Bronni tekshiring</b>
+
+Tadbir: {title}
+Sana: {when}
+Chipta: {type} × {qty}
+Toʻlov summasi: <b>{amount}</b>
+
+Tasdiqlaganingizdan soʻng joylar {minutes} daqiqa siz uchun band turadi — shu vaqt ichida pulni oʻtkazib, chekni yuborishingiz kerak."""
+booking_summary_free = """<b>Maʼlumotlarni tekshiring</b>
+
+Tadbir: {title}
+Sana: {when}
+Chipta: {type} × {qty}
+
+Ishtirok bepul."""
+booking_aborted = "Bron qilinmadi."
+registered_free = "Siz «{title}» tadbiriga roʻyxatdan oʻtdingiz 🎉 Chipta quyida."
+pay_instructions = """✅ <b>Bron №{order_id} yaratildi</b>
+{title} · {type} × {qty}
+
+Quyidagi kartaga <b>aynan {amount}</b> oʻtkazing (oʻtkazmangizni shu summa boʻyicha topamiz):
+<code>{card}</code>
+{card_extra}
+
+Soʻng shu yerga <b>chek skrinshoti yoki faylini</b> bitta xabarda yuboring.
+
+⏳ Joylar soat <b>{until}</b> gacha band turadi. Ulgurmasangiz, bron avtomatik bekor qilinadi."""
+pay_card_holder = "Qabul qiluvchi: {holder}"
+pay_card_bank = "Bank: {bank}"
+send_receipt_now = "Bron №{order_id} boʻyicha chek skrinshoti yoki PDF faylini bitta xabarda yuboring."
+receipt_received = "Bron №{order_id} boʻyicha chek qabul qilindi 🧾 Moderatorga yubordik — toʻlov tasdiqlanishi bilan chiptani yuboramiz."
+receipt_no_order = "Sizda toʻlovni kutayotgan bron yoʻq. Chipta olish uchun «🎟 Tadbirlar» boʻlimini oching."
+receipt_choose_order = "Sizda bir nechta bron bor. Chek qaysi biriga tegishli ekanini tanlang va uni qayta yuboring:"
+booking_cancelled = "Bron №{order_id} bekor qilindi, joylar boʻshatildi."
+booking_expired = """⌛️ Bron №{order_id} («{title}») vaqti tugadi, joylar boʻshatildi.
+
+Agar pulni allaqachon oʻtkazgan boʻlsangiz, quyidagi tugmani bosib chekni yuboring — biz hammasini tekshiramiz."""
+order_under_review = "🕓 Bron №{order_id} boʻyicha chek tekshirilmoqda. Moderator toʻlovni tasdiqlashi bilan chiptani yuboramiz."
+order_paid = "✅ Bron №{order_id} toʻlangan. Chiptalar «🎫 Chiptalarim» boʻlimida."
+order_refund_required = "💸 Bron №{order_id} boʻyicha pul qaytarilmoqda. Siz bilan bogʻlanamiz."
+order_refunded = "Bron №{order_id} boʻyicha pul qaytarildi."
+order_closed = "Bron №{order_id} yopilgan. Chipta olish uchun «🎟 Tadbirlar» boʻlimini oching."
+order_status_pending = "toʻlov kutilmoqda"
+order_status_under_review = "chek tekshirilmoqda"
+order_status_paid = "toʻlangan"
+order_status_refund_required = "pul qaytarilmoqda"
+order_status_refunded = "pul qaytarilgan"
+order_status_expired = "muddati tugagan"
+order_status_cancelled = "bekor qilingan"
+
+# --- Moderator decision (messages to the buyer) ---
+payment_approved = "🎉 Bron №{order_id} boʻyicha toʻlov tasdiqlandi! «{title}» uchun chiptangiz quyida."
+payment_approved_no_seats = "Bron №{order_id} boʻyicha toʻlov qabul qilindi, lekin afsuski, barcha joylar band boʻlib qoldi 😔 Pulni qaytaramiz — moderator siz bilan bogʻlanadi."
+payment_rejected_retry = """❗️ Bron №{order_id} boʻyicha chek qabul qilinmadi: {reason}.
+
+Oʻtkazmani tekshirib, soat {until} gacha toʻgʻri chekni yuboring — joylar hozircha siz uchun band."""
+payment_rejected_final = """❌ Bron №{order_id} boʻyicha chek qabul qilinmadi: {reason}. Bron bekor qilindi.
+Agar bu xato deb hisoblasangiz, yozing: {support}"""
+refund_done = "💸 Bron №{order_id} boʻyicha pul qaytarildi."
+reject_amount = "summa mos kelmadi"
+reject_unreadable = "chekni oʻqib boʻlmaydi"
+reject_not_found = "toʻlov kelib tushmadi"
+reject_other = "chek tekshiruvdan oʻtmadi"
+
+# --- Ticket ---
+ticket_caption = """🎫 <b>{title}</b>
+{when}
+Chipta kodi: <code>{code}</code>
+
+QR-kodni kirishda koʻrsating. Chipta doim «🎫 Chiptalarim» boʻlimida."""
+ticket_img_holder = "Egasi"
+ticket_img_type = "Chipta turi"
+ticket_img_order = "Buyurtma №{order_id}"
+ticket_img_footer = "QR-kodni kirishda koʻrsating"
+
+# --- My tickets ---
+my_title = "Bronlaringiz va chiptalaringiz:"
+my_empty = "Hozircha boʻsh. «🎟 Tadbirlar» boʻlimiga kiring 🙂"
+
+# --- Entrance check-in ---
+ci_prompt = """Chipta QR-kodini telefon kamerasi bilan skanerlang — bot uni avtomatik ochadi.
+Yoki chipta kodini yuboring, masalan <code>K7M2-Q9XD</code>."""
+ci_not_found = "Chipta topilmadi."
+ci_status_valid = "🟢 <b>Chipta haqiqiy</b>"
+ci_status_used = "⛔️ <b>Chipta allaqachon ishlatilgan</b> {at}"
+ci_status_cancelled = "❌ <b>Chipta bekor qilingan</b>"
+ci_holder = "Egasi: {name}"
+ci_type = "Turi: {type}"
+ci_code = "Kod: <code>{code}</code>"
+ci_not_today = "⚠️ Diqqat: bu tadbir bugun emas."
+ci_btn_let_in = "✅ Kiritish"
+ci_done = "✅ <b>Kirish qayd etildi</b>"
+ci_done_alert = "Kirish qayd etildi"
+ci_already_alert = "Bu chipta allaqachon ishlatilgan!"
+ci_staff_only = "Bu «{title}» tadbiri chiptasi. Kirishni faqat tashkilotchilar belgilay oladi."
+err_no_rights = "Bunga ruxsatingiz yoʻq."
+
+# --- Errors ---
+err_ticket_type_unavailable = "Bu chipta turi endi mavjud emas."
+err_event_unavailable = "Bu tadbirga bron qilib boʻlmaydi."
+err_bad_quantity = "Chiptalar soni notoʻgʻri."
+err_active_order_exists = "Sizda bu tadbirga faol bron bor (№{order_id})."
+err_sold_out = "Afsuski, joylar tugadi 😔"
+err_order_not_found = "Bron topilmadi."
+err_cannot_cancel = "Bu bronni endi bekor qilib boʻlmaydi: chek tekshirilmoqda yoki bron yopilgan. Yordam kerak boʻlsa — /help."
+err_already_under_review = "Bron №{order_id} boʻyicha chek allaqachon tekshirilmoqda — moderator qarorini kuting."
+err_already_paid = "Bron №{order_id} allaqachon toʻlangan."
+err_order_closed = "Bron №{order_id} yopilgan, unga chek biriktirib boʻlmaydi."
+err_payment_not_found = "Toʻlov topilmadi."
+err_already_reviewed = "Bu chek allaqachon koʻrib chiqilgan."
+err_payments_not_configured = "Toʻlov vaqtincha ishlamaydi: tashkilotchi hali kartani koʻrsatmagan. Keyinroq urinib koʻring."
+err_not_enough_seats = "Buncha joy qolmadi — kamroq tanlang."
+err_foreign_contact = "Iltimos, oʻz raqamingizni pastdagi tugma orqali yuboring."
+err_receipt_format = "Chekni foto, rasm yoki PDF koʻrinishida yuboring (20 MB gacha)."
+
+# --- Event cancellation & reminders ---
+event_cancelled = "😔 «{title}» tadbiri bekor qilindi. Bron №{order_id} ham bekor boʻldi."
+event_cancelled_refund = "😔 «{title}» tadbiri bekor qilindi. Bron №{order_id} boʻyicha pulni qaytaramiz — moderator siz bilan bogʻlanadi. Savollar uchun: {support}"
+reminder_24h = """⏰ Eslatma: «{title}»
+📅 {when}
+📍 {place}
+
+Chipta «🎫 Chiptalarim» boʻlimida."""
+reminder_3h = """⏰ Tez orada boshlanadi: «{title}»
+📅 {when}
+📍 {place}
+
+QR-kodli chiptani unutmang!"""
+
+# --- Moderation (moderation chat language = DEFAULT_LANG) ---
+mod_title = "🧾 <b>Tekshiruv uchun chek · buyurtma №{order_id}</b>"
+mod_event = "Tadbir: {title} ({when})"
+mod_ticket = "Chipta: {type} × {qty}"
+mod_amount = "Summa: <b>{amount}</b>, karta {card}"
+mod_buyer = "Xaridor: {name} · {username} · {phone} · id <code>{tg_id}</code>"
+mod_attempt = "Urinish: {n} / {max}"
+mod_duplicate = "⚠️ Aynan shu fayl avval ham quyidagi buyurtmalarga yuborilgan: {orders}"
+mod_no_seats = "⚠️ Bron muddati tugagan va boʻsh joy yoʻq — tasdiqlansa, pulni qaytarish kerak boʻladi."
+mod_btn_approve = "✅ Tasdiqlash"
+mod_btn_reject = "❌ Rad etish"
+mod_btn_refunded = "💸 Pul qaytarildi"
+reject_btn_amount = "Summa mos emas"
+reject_btn_unreadable = "Chek oʻqilmaydi"
+reject_btn_not_found = "Toʻlov tushmagan"
+reject_btn_other = "Boshqa sabab"
+mod_done = "Tayyor"
+mod_result_approved = "✅ Tasdiqlandi — {by}, {at}"
+mod_result_rejected = "❌ Rad etildi ({reason}) — {by}, {at}"
+mod_result_refund_required = "⚠️ Tasdiqlandi, lekin joy yoʻq — pulni qaytarish kerak. {by}, {at}"
+mod_result_refunded = "💸 Pul qaytarildi — {by}, {at}"
+mod_refund_cancelled_event = """💸 <b>Pulni qaytarish: tadbir bekor qilindi</b>
+Buyurtma №{order_id} · {title}
+Summa: <b>{amount}</b>
+Xaridor: {name} · {username} · {phone}"""
+
+# --- Admin panel ---
+adm_menu = """⚙️ <b>Admin panel</b>
+
+Ochiq tadbirlar: {upcoming}
+Tekshiruvdagi cheklar: {review}
+Berilgan chiptalar: {tickets}
+Tushum: {revenue}"""
+adm_btn_events = "📅 Tadbirlar"
+adm_btn_new_event = "➕ Yangi tadbir"
+adm_btn_card = "💳 Toʻlov kartasi"
+adm_btn_modchat = "🛡 Moderatsiya chati"
+adm_btn_staff = "👥 Jamoa"
+adm_btn_stats = "📊 Statistika"
+adm_stats = """📊 <b>Statistika</b>
+
+Foydalanuvchilar: {users}
+Toʻlangan buyurtmalar: {paid_orders}
+Berilgan chiptalar: {tickets}
+Tushum: {revenue}
+Tekshiruvdagi cheklar: {review}"""
+adm_events_title = "Tadbirlar ({n}): 🟢 eʼlon qilingan · 📝 qoralama · 🏁 oʻtgan"
+adm_events_empty = "Hozircha tadbirlar yoʻq."
+adm_status_draft = "📝 qoralama"
+adm_status_published = "🟢 eʼlon qilingan"
+adm_status_cancelled = "❌ bekor qilingan"
+adm_types_header = "<b>Chiptalar:</b>"
+adm_type_line = "• {name} — {price}: sotildi {sold}, bronda {held}, jami {capacity}"
+adm_hidden = "(yashirilgan)"
+adm_revenue = "💰 Tushum: <b>{amount}</b>"
+adm_checked_in = "🚪 Kirganlar: {n} / {total}"
+adm_review_refunds = "🧾 Tekshiruvdagi cheklar: {review} · 💸 Qaytarish kutilmoqda: {refunds}"
+adm_share_link = "🔗 Eʼlon uchun havola: {link}"
+adm_btn_publish = "🟢 Eʼlon qilish"
+adm_btn_unpublish = "⏸ Eʼlonni toʻxtatish"
+adm_btn_edit = "✏️ Tahrirlash"
+adm_btn_types = "🎟 Chipta turlari"
+adm_btn_broadcast = "📣 Xabar tarqatish"
+adm_btn_cancel_event = "❌ Tadbirni bekor qilish"
+adm_btn_cancel_event_yes = "Ha, tadbirni bekor qilish"
+adm_btn_send = "📤 Yuborish"
+adm_btn_add_type = "➕ Chipta turi qoʻshish"
+adm_btn_hide = "🚫 Sotuvdan olish"
+adm_btn_show = "✅ Sotuvga qaytarish"
+adm_err_no_types = "Avval kamida bitta chipta turini qoʻshing."
+adm_no_participants = "Hozircha ishtirokchilar yoʻq."
+adm_broadcast_prompt = "Bu tadbirning barcha chipta egalariga yuboriladigan xabar matnini yuboring. Formatlash saqlanadi."
+adm_broadcast_confirm = "Xabarni {n} kishi oladi. Yuborilsinmi?"
+adm_broadcast_done = "Tarqatish yakunlandi: {total} tadan {sent} tasi yetkazildi."
+adm_cancel_event_confirm = "Tadbir bekor qilinsinmi? Ochiq bronlar olib tashlanadi, chiptalar bekor qilinadi, ishtirokchilarga xabar boradi, toʻlangan buyurtmalar esa pulni qaytarish roʻyxatiga tushadi. Bu amalni ortga qaytarib boʻlmaydi."
+adm_edit_choose = "Nimani oʻzgartiramiz?"
+field_poster = "Afisha"
+field_map = "Xarita"
+field_tt_name = "Nomi"
+field_tt_price = "Narxi"
+field_tt_capacity = "Joylar soni"
+edit_prompt_poster = "Yangi afishani (rasm) yuboring yoki olib tashlash uchun «-»:"
+edit_prompt_map = "Geolokatsiya yoki xarita havolasini yuboring («-» — oʻchirish):"
+edit_prompt_tt_price = "Yangi narx soʻmda (0 — bepul). Avval qilingan bronlar eski narxda qoladi:"
+edit_prompt_tt_capacity = "Yangi joylar soni:"
+edit_err_photo = "Rasm yoki «-» yuboring."
+edit_err_capacity_below_reserved = "Joylar sonini sotilgan va bron qilinganlardan kam qilib boʻlmaydi."
+adm_types_title = """«{title}» chipta turlari
+(band / jami):"""
+adm_type_card = """<b>{name}</b>
+Narxi: {price}
+Joylar: {capacity}
+Band (sotilgan + bronda): {reserved}
+Boʻsh: {available}"""
+tt_prompt_price = "Narxi soʻmda (0 — bepul):"
+tt_prompt_capacity = "Bu turda nechta joy bor?"
+
+# --- New event wizard ---
+wiz_btn_draft = "💾 Qoralamaga saqlash"
+wiz_err_title = "Nom 3 tadan 255 tagacha belgidan iborat boʻlishi kerak."
+wiz_err_date = "Sanani tushunmadim. Namuna: <code>25.10.2026 19:00</code>"
+wiz_err_past = "Bu sana allaqachon oʻtib ketgan."
+wiz_err_location = "Geolokatsiya, havola (http…) yoki «-» yuboring."
+wiz_err_price = "Summani raqam bilan kiriting, masalan <code>150000</code>."
+wiz_err_capacity = "1 dan 100 000 gacha butun son kiriting."
+
+# --- Payment card ---
+adm_card_current = """💳 <b>Toʻlov kartasi</b>
+
+<code>{number}</code>
+Qabul qiluvchi: {holder}
+Bank: {bank}"""
+adm_card_none = "💳 Toʻlov kartasi koʻrsatilmagan — pullik bronlar ishlamaydi."
+adm_btn_card_edit = "✏️ Kartani oʻzgartirish"
+adm_card_prompt_number = "Karta raqami (16 ta raqam):"
+adm_card_err_number = "Aniq 16 ta raqam boʻlishi kerak."
+adm_card_prompt_holder = "Qabul qiluvchining ismi, bankdagidek (yoki «-»):"
+adm_card_prompt_bank = "Bank (yoki «-»):"
+
+# --- Moderation chat ---
+adm_modchat_current = "🛡 Moderatsiya chati: <b>{title}</b>"
+adm_modchat_none = "🛡 Moderatsiya chati ulanmagan — cheklar adminlarga shaxsiy xabarda keladi."
+adm_modchat_howto = """Qanday ulash mumkin: moderatorlar uchun yopiq kanal yoki guruh yarating va botni u yerga administrator qilib qoʻshing (xabar yuborish va tahrirlash huquqi bilan) — bot shu chatdan foydalanishni oʻzi taklif qiladi.
+
+Cheklarni shu chat administratorlari va bot adminlari tasdiqlay oladi."""
+adm_btn_modchat_test = "🔄 Ruxsatni tekshirish"
+adm_modchat_test_msg = "✅ Bu chat Focused cheklarini moderatsiya qilish uchun ulandi."
+adm_modchat_test_ok = "Bot moderatsiya chatiga yoza oladi ✅"
+adm_modchat_test_fail = "Bot chatga yoza olmayapti: {error}"
+adm_modchat_offer = "Bot «{title}» chatiga qoʻshildi. Cheklarni moderatsiya qilish uchun shu chatdan foydalanilsinmi?"
+adm_modchat_use = "✅ Ha, foydalanish"
+
+# --- Team ---
+adm_staff_title = """👥 <b>Jamoa</b>
+👑 admin · 🎫 nazoratchi (chiptalarni tekshiradi)
+"""
+adm_btn_add_staff = "➕ Nazoratchi qoʻshish"
+adm_btn_add_admin = "➕ Admin qoʻshish"
+adm_btn_pick_user = "👤 Foydalanuvchini tanlash"
+adm_staff_pick_prompt = "Pastdagi tugmani bosing va kontaktlardan odamni tanlang."
+
+# --- Koʻrib chiqishdan keyin qoʻshildi ---
+err_user_limit = "Bitta tadbirga bir kishi {max} tadan ortiq chipta ola olmaydi."
+err_own_order = "Oʻz buyurtmangiz boʻyicha qaror qabul qila olmaysiz."
+err_super_only = "Buni faqat bot egasi (ADMIN_IDS) oʻzgartira oladi."
+mod_late = "⏰ Chek bron muddati tugaganidan {minutes} daqiqa keyin yuborilgan."
+mod_price_changed = "⚠️ Narx oʻzgargan: buyurtmada {old}, hozir {new}."
+mod_event_cancelled = "⚠️ Tadbir bekor qilingan — tasdiqlansa, pulni qaytarish kerak boʻladi."
+event_cancelled_review = "😔 «{title}» tadbiri bekor qilindi. Bron №{order_id} boʻyicha chek tekshiriladi va toʻlov tushgan boʻlsa, pul qaytariladi. Savollar: {support}"
+adm_alert_ticket_stuck = "⚠️ {code} chiptasi (buyurtma №{order_id}) 10 urinishdan keyin ham yetkazilmadi. Xaridor botni bloklagan boʻlishi mumkin — u bilan bogʻlaning."
+adm_alert_stale_reviews = "⏰ Odatdagidan uzoq qaror kutayotgan cheklar: {n} ({orders}). Roʻyxat: ⚙️ Admin panel → 🧾 Tekshiruvdagi cheklar."
+adm_card_changed = "⚠️ Toʻlov kartasi oʻzgartirildi ({by}): {old} → {new}. Agar buni kutmagan boʻlsangiz — adminlarni zudlik bilan tekshiring."
+adm_modchat_changed = "ℹ️ Moderatsiya chati oʻzgartirildi ({by}): {title}."
+adm_modchat_err_unsafe = "Bu chat mos emas: u ommaviy yoki siz uning administratori emassiz."
+adm_btn_reviews = "🧾 Tekshiruvdagi cheklar"
+adm_btn_refunds = "💸 Qaytarishlar"
+adm_reviews_title = "Qarorsiz cheklar: {n}. Chekni moderatsiya chatiga qayta yuborish uchun bosing."
+adm_reviews_empty = "Barcha cheklar koʻrib chiqilgan ✅"
+adm_repost_ok = "Moderatsiya chatiga yuborildi"
+adm_repost_fail = "Yuborib boʻlmadi: moderatsiya chatini tekshiring."
+adm_refunds_title = "Qaytarishni kutmoqda: {n}"
+adm_refunds_empty = "Qaytarishlar yoʻq ✅"
+adm_refund_line = """№{order_id} · {title}
+{amount} · {name} · {phone}"""
+adm_btn_refund_done = "✅ №{order_id} qaytarildi"
+err_already_registered = "Siz bu tadbirga allaqachon roʻyxatdan oʻtgansiz — chipta «🎫 Chiptalarim» boʻlimida."
+already_registered = "✅ Siz roʻyxatdan oʻtgansiz. Chipta — «🎫 Chiptalarim» boʻlimida."
+ci_cancelled_alert = "Chipta bekor qilingan — u bilan kirib boʻlmaydi."
+payment_approved_event_cancelled = "Bron №{order_id} boʻyicha toʻlov qabul qilindi, lekin «{title}» tadbiri bekor qilingan 😔 Pulni qaytaramiz — moderator siz bilan bogʻlanadi."
+adm_broadcast_too_long = "Matn juda uzun: 3500 belgidan oshmasin."
+
+# --- Event form ---
+form_title = "Nomi"
+form_description = "Tavsif"
+form_venue = "Manzil"
+form_starts_at = "Sana va vaqt"
+form_map = "Xarita"
+form_price = "Narx"
+form_capacity = "Joylar soni"
+form_intro = """<b>Yangi tadbir</b>
+
+Quyidagi formadan nusxa oling (ustiga bosing), toʻldiring va bitta xabarda yuboring.
+
+• Matnni [qavs] ichidagi sarlavha ostiga yozing, sarlavhalarning oʻzini oʻzgartirmang.
+• Majburiy: Nomi RU, Manzil RU, Sana va vaqt, Narx, Joylar soni.
+• UZ/EN tarjima boʻsh yoki «-» boʻlsa — foydalanuvchilar ruscha matnni koʻradi.
+• Sana: <code>25.10.2026 19:00</code>, Toshkent vaqti. Narx soʻmda, 0 — bepul.
+• Xarita — havola yoki «-».
+
+Afishani keyingi qadamda yuborasiz."""
+form_example_intro = "Toʻldirish namunasi:"
+form_btn_example = "📋 Namuna"
+form_errors = """Formani tushunib boʻlmadi:
+{errors}
+
+Tuzating va formani toʻliq qayta yuboring."""
+form_err_no_sections = "[Kvadrat qavs] ichidagi sarlavhalar topilmadi. Formadan nusxa oling va uni toʻldiring."
+form_err_unknown = "Nomaʼlum sarlavha [{label}]"
+form_err_missing = "Toʻldirilmagan: {label}"
+form_err_too_long = "{label}: {max} belgidan uzun"
+form_too_long_hint = "Forma 3900 belgidan uzun — Telegram uni bir nechta xabarga boʻlib yuborgan boʻlishi mumkin. Tavsiflarni qisqartiring."
+form_send_text = "Formani matn sifatida, bitta xabarda yuboring."
+form_ask_poster = "Forma qabul qilindi ✅ Endi afishani yuboring (rasm sifatida, fayl emas) yoki «Oʻtkazib yuborish»ni bosing."
+form_preview_header = "<b>Tadbirni tekshiring</b>"
+form_preview_capacity = "🎟 Joylar: {n}"
+form_missing = "⚠️ Tarjimasiz (ruscha matn koʻrsatiladi): {fields}"
+form_btn_fix = "✏️ Formani tuzatish"
+form_fix_intro = "Formangiz quyida — nusxa oling, tuzating va qayta yuboring."
+form_edit_intro = "Tadbirning joriy maʼlumotlari quyida. Formadan nusxa oling, keraklisini tuzating va bitta xabarda yuboring. Narx va joylar soni «🎟 Chipta turlari» boʻlimida oʻzgartiriladi."
+adm_btn_edit_form = "📝 Matnlar, sana, xarita"
+tt_prompt_name = "Chipta turining nomini uch tilda « / » orqali yozing, masalan <code>Студенческий / Talaba / Student</code>. Bitta nom — barcha tillar uchun."
+edit_prompt_tt_name = "Yangi nom uch tilda « / » orqali: <code>RU / UZ / EN</code>. Bitta nom — barcha tillar uchun."
+tt_err_names = "Bitta nom yoki « / » orqali uchta nom kerak: RU / UZ / EN."
+
+# --- Excel report ---
+adm_btn_export = "📊 Hisobot (Excel)"
+adm_export_caption = "«{title}» boʻyicha hisobot: ishtirokchilar va buyurtmalar. Excel va Google Sheetsda ochiladi."
+xls_sheet_participants = "Ishtirokchilar"
+xls_sheet_orders = "Buyurtmalar"
+xls_participants_headers = "№|Chipta kodi|Egasi|Telefon|Telegram|Chipta turi|Holat|Kirish|Buyurtma №|Toʻlangan"
+xls_orders_headers = "Buyurtma №|Holat|Xaridor|Telefon|Telegram|Chipta turi|Soni|Summa, soʻm|Karta|Toʻlov usuli|Yaratilgan|Toʻlangan|Moderator"
+xls_summary = "Sotilgan chiptalar: {sold} · Kirganlar: {checked} · Tushum: {revenue}"
+xls_generated = "Yuklab olingan: {at}"
+xls_ticket_valid = "Amal qiladi"
+xls_ticket_used = "Kirgan"
+xls_ticket_cancelled = "Bekor qilingan"
+xls_method_card_transfer = "Kartaga oʻtkazma"
+xls_method_free = "Bepul"
+
+# --- Google Sheets ---
+adm_btn_gsheet = "📗 Google Sheets"
+xls_col_event = "Tadbir"
+gs_tab_orders = "Barcha buyurtmalar"
+gs_status_no_key = "📗 Google Sheets ulanmagan: xizmat hisobi kaliti yoʻq. Uni qanday olish — docs/GOOGLE_SHEETS.md."
+gs_status = """📗 <b>Google Sheets</b>
+
+Xizmat hisobi: <code>{email}</code>
+Jadval: {sheet}
+Oxirgi sinxronlash: {last}
+
+Bot har bir tadbir uchun varaq (ishtirokchilar) va umumiy «Barcha buyurtmalar» varagʻini yuritadi va ularni har bir-ikki daqiqada yangilaydi."""
+gs_no_sheet = "koʻrsatilmagan"
+gs_never = "hali boʻlmagan"
+gs_error_line = "⚠️ Xato: {error}"
+gs_btn_set = "🔗 Jadvalni koʻrsatish"
+gs_btn_sync = "🔄 Hozir sinxronlash"
+gs_btn_open = "Jadvalni ochish"
+gs_syncing = "Sinxronlanmoqda…"
+gs_synced = "✅ Sinxronlandi, yangilangan varaqlar: {n}."
+gs_prompt_link = """1. Boʻsh Google jadval yarating.
+2. «Kirish sozlamalari» → <code>{email}</code> ni muharrir sifatida qoʻshing.
+3. Jadval havolasini shu yerga yuboring."""
+gs_err_link = "Bu Google jadval havolasiga oʻxshamaydi. https://docs.google.com/spreadsheets/d/… koʻrinishidagi havola kerak."
+gs_err_access = "Bot jadvalni ocha olmadi: {error}. U <code>{email}</code> uchun muharrir huquqi bilan ochilganini tekshiring."
+gs_connected = "✅ «{title}» jadvali ulandi. Birinchi sinxronlash boshlanmoqda…"
+gs_changed = "ℹ️ Hisobotlar uchun Google jadval oʻzgartirildi ({by}): {url}"
+gs_alert_failed = "⚠️ Google Sheets bilan sinxronlash ishlamayapti: {error}"
+
+# --- Manual ticket issuance ---
+adm_btn_issue = "🎫 Chipta berish"
+adm_type_issued = ", qoʻlda berilgan {n}"
+xls_method_manual = "Qoʻlda berilgan"
+issue_choose_type = "Qaysi chiptani berish kerak? 🚫 — tur sotuvdan yashirilgan, lekin uni berish mumkin."
+issue_choose_qty = "«{type}» chiptasidan nechta berish kerak? Boʻsh: {n}."
+issue_no_seats = "Bu turda boʻsh joy yoʻq. «🎟 Chipta turlari»da joylar sonini oshiring yoki «Mehmon» kabi alohida tur qoʻshing."
+issue_prompt_recipient = """Chiptani kimga berish kerak?
+
+• Mehmonning ismini chiptada qanday boʻlsa, shunday yozing. Telefonni ham qoʻshish mumkin: <code>Ivan Petrov, +998901234567</code>. Chipta sizga keladi — mehmonga yuborasiz.
+• Yoki «👤 Telegramdan tanlash»ni bosing — chipta odamga botda keladi."""
+issue_btn_pick = "👤 Telegramdan tanlash"
+issue_err_name = "Mehmonning ismi kerak (2 dan 100 belgigacha). Telefonni vergul orqali qoʻshish mumkin."
+issue_recipient_ok = "Qabul qiluvchi tanlandi."
+issue_confirm = """<b>Chipta berilsinmi?</b>
+
+Tadbir: {title}
+Chipta: {type} × {qty}
+Kimga: {holder}
+Qayerga: {dest}
+
+Joy tadbir limitidan yechiladi, toʻlov talab qilinmaydi."""
+issue_dest_tg = "Telegramda {user} ga"
+issue_dest_admin = "sizga, mehmonga yuborish uchun"
+issue_btn_go = "✅ Berish"
+issue_tg_failed = "{user} hali botni ishga tushirmagan, shuning uchun Telegram unga birinchi boʻlib yozishga ruxsat bermaydi. Chipta sizga yuborildi — uni yuboring."
+issue_done_sent = "✅ Chipta {user} ga yuborildi. Kod: {codes}"
+issue_done_forward = "✅ Chipta berildi, kod: {codes}. Yuqoridagi rasmni mehmonga yuboring."

@@ -1,0 +1,33 @@
+[project]
+name = "focused-bot"
+version = "0.1.0"
+description = "Telegram event manager bot for focused.uz: events, bookings, card-transfer payments with moderation, QR tickets"
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram>=3.13,<4",
+    "sqlalchemy[asyncio]>=2.0.30",
+    "asyncpg>=0.29",
+    "alembic>=1.13",
+    "pydantic-settings>=2.4",
+    "qrcode[pil]>=7.4",
+    "pillow>=10.4",
+    "redis>=5.0",
+    "tzdata>=2024.1",
+    "openpyxl>=3.1",
+    "gspread>=6.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["tests"]
+
+[tool.uv]
+package = false
