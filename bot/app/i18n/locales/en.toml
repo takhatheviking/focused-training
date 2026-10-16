@@ -1,0 +1,480 @@
+# English. The bot fills {placeholders}; HTML tags <b>, <i>, <code>, <a> are allowed.
+
+# --- General ---
+choose_lang_all = "🌐 Выберите язык · Tilni tanlang · Choose your language"
+welcome = """Hi, {name}! 👋
+
+I'm the <b>Focused</b> events bot. Here you can browse upcoming events, book a seat and get your ticket.
+
+Pick a section from the menu below."""
+help = """<b>How it works</b>
+
+1. “🎟 Events” — pick an event.
+2. Tap “Buy ticket”, choose how many and confirm the booking — your seats are held while you pay.
+3. Transfer the amount to the card the bot shows you and send a screenshot of the receipt here.
+4. Once the payment is checked, the bot sends your ticket with a QR code — show it at the entrance.
+
+All your tickets are in “🎫 My tickets”.
+Questions: {support}"""
+cancelled = "Cancelled."
+unknown_input = "Didn't quite get that 🙂 Please pick an option from the menu."
+stale_button = "This button is out of date. Please reopen the section from the menu."
+saved = "Saved ✅"
+cmd_start = "Main menu"
+cmd_my = "My tickets"
+cmd_lang = "Change language"
+cmd_help = "How it works"
+
+# --- Buttons ---
+btn_events = "🎟 Events"
+btn_my = "🎫 My tickets"
+btn_lang = "🌐 Language"
+btn_help = "💬 Help"
+btn_admin = "⚙️ Admin"
+btn_checkin = "📷 Check tickets"
+btn_back = "« Back"
+btn_cancel = "✖️ Cancel"
+btn_skip = "⏭ Skip"
+btn_all_events = "« All events"
+btn_buy = "🎟 Buy ticket"
+btn_register = "✍️ Register"
+btn_my_booking = "⏳ My booking"
+btn_share_contact = "📱 Share phone number"
+btn_confirm_booking = "✅ Confirm booking"
+btn_send_receipt = "📎 Send receipt"
+btn_cancel_booking = "❌ Cancel booking"
+btn_already_paid = "📎 I've paid — send receipt"
+
+# --- Events ---
+events_title = "Upcoming events ({n}):"
+no_events = "No open events right now. Check back later 🙌"
+map_link = "Open on the map"
+price_free = "Free"
+price_from = "from {price}"
+price_free_or_paid = "free and paid tickets available"
+seats_left = "Seats left: {n}"
+sold_out = "Sold out"
+sold_out_short = "sold out"
+left_short = "{n} left"
+
+# --- Booking & payment ---
+choose_ticket_type = "Choose a ticket type:"
+ask_quantity = """How many tickets?
+Type: <b>{type}</b> · {price} each"""
+ask_contact = "To make a booking, please share your phone number — use the button below. The organizers need it to contact you and match your payment."
+contact_saved = "Thanks, your number is saved ✅"
+booking_summary = """<b>Check your booking</b>
+
+Event: {title}
+Date: {when}
+Ticket: {type} × {qty}
+To pay: <b>{amount}</b>
+
+Once you confirm, the seats are held for you for {minutes} min — transfer the money and send the receipt within that time."""
+booking_summary_free = """<b>Check your registration</b>
+
+Event: {title}
+Date: {when}
+Ticket: {type} × {qty}
+
+Admission is free."""
+booking_aborted = "No booking was made."
+registered_free = "You're registered for “{title}” 🎉 Your ticket is below."
+pay_instructions = """✅ <b>Booking #{order_id} created</b>
+{title} · {type} × {qty}
+
+Transfer <b>exactly {amount}</b> to this card (we match your transfer by the exact amount):
+<code>{card}</code>
+{card_extra}
+
+Then send a <b>screenshot or file of the receipt</b> here in one message.
+
+⏳ Seats are held until <b>{until}</b>. If you miss it, the booking is cancelled automatically."""
+pay_card_holder = "Recipient: {holder}"
+pay_card_bank = "Bank: {bank}"
+send_receipt_now = "Send a screenshot or PDF of the receipt for booking #{order_id} in one message."
+receipt_received = "Receipt for booking #{order_id} received 🧾 It's with a moderator now — we'll send your ticket as soon as the payment is confirmed."
+receipt_no_order = "You have no bookings awaiting payment. To buy a ticket, open “🎟 Events”."
+receipt_choose_order = "You have several bookings. Choose which one this receipt is for, then send it again:"
+booking_cancelled = "Booking #{order_id} cancelled, seats released."
+booking_expired = """⌛️ Booking #{order_id} (“{title}”) has expired, seats released.
+
+If you've already sent the money, tap the button below and send the receipt — we'll check everything."""
+order_under_review = "🕓 The receipt for booking #{order_id} is under review. We'll send your ticket as soon as a moderator confirms the payment."
+order_paid = "✅ Booking #{order_id} is paid. Your tickets are in “🎫 My tickets”."
+order_refund_required = "💸 A refund for booking #{order_id} is being processed. We'll get in touch."
+order_refunded = "Booking #{order_id} has been refunded."
+order_closed = "Booking #{order_id} is closed. To buy a ticket, open “🎟 Events”."
+order_status_pending = "awaiting payment"
+order_status_under_review = "receipt under review"
+order_status_paid = "paid"
+order_status_refund_required = "refund pending"
+order_status_refunded = "refunded"
+order_status_expired = "expired"
+order_status_cancelled = "cancelled"
+
+# --- Moderator decision (messages to the buyer) ---
+payment_approved = "🎉 Payment for booking #{order_id} confirmed! Your ticket for “{title}” is below."
+payment_approved_no_seats = "We've received the payment for booking #{order_id}, but unfortunately all seats are already taken 😔 We'll refund you — a moderator will contact you."
+payment_rejected_retry = """❗️ The receipt for booking #{order_id} wasn't accepted: {reason}.
+
+Please check your transfer and send the correct receipt by {until} — your seats are still held."""
+payment_rejected_final = """❌ The receipt for booking #{order_id} wasn't accepted: {reason}. The booking is cancelled.
+If you think this is a mistake, write to {support}"""
+refund_done = "💸 Booking #{order_id} has been refunded."
+reject_amount = "the amount doesn't match"
+reject_unreadable = "the receipt is unreadable"
+reject_not_found = "the payment hasn't arrived"
+reject_other = "the receipt didn't pass the check"
+
+# --- Ticket ---
+ticket_caption = """🎫 <b>{title}</b>
+{when}
+Ticket code: <code>{code}</code>
+
+Show the QR code at the entrance. Your ticket is always in “🎫 My tickets”."""
+ticket_img_holder = "Holder"
+ticket_img_type = "Ticket type"
+ticket_img_order = "Order #{order_id}"
+ticket_img_footer = "Show the QR at the entrance"
+
+# --- My tickets ---
+my_title = "Your bookings and tickets:"
+my_empty = "Nothing here yet. Take a look at “🎟 Events” 🙂"
+
+# --- Entrance check-in ---
+ci_prompt = """Scan the ticket QR with your phone camera — the bot will open it automatically.
+Or send the ticket code, e.g. <code>K7M2-Q9XD</code>."""
+ci_not_found = "Ticket not found."
+ci_status_valid = "🟢 <b>Ticket is valid</b>"
+ci_status_used = "⛔️ <b>Ticket already used</b> {at}"
+ci_status_cancelled = "❌ <b>Ticket cancelled</b>"
+ci_holder = "Holder: {name}"
+ci_type = "Type: {type}"
+ci_code = "Code: <code>{code}</code>"
+ci_not_today = "⚠️ Heads up: this event isn't today."
+ci_btn_let_in = "✅ Let in"
+ci_done = "✅ <b>Check-in recorded</b>"
+ci_done_alert = "Checked in"
+ci_already_alert = "This ticket has already been used!"
+ci_staff_only = "This is a ticket for “{title}”. Only the organizers can check it in."
+err_no_rights = "You don't have permission to do that."
+
+# --- Errors ---
+err_ticket_type_unavailable = "This ticket type is no longer available."
+err_event_unavailable = "This event isn't open for booking."
+err_bad_quantity = "Invalid number of tickets."
+err_active_order_exists = "You already have an active booking for this event (#{order_id})."
+err_sold_out = "Sorry, it's sold out 😔"
+err_order_not_found = "Booking not found."
+err_cannot_cancel = "This booking can't be cancelled anymore: the receipt is under review or the booking is closed. Need help? /help"
+err_already_under_review = "The receipt for booking #{order_id} is already under review — please wait for the moderator's decision."
+err_already_paid = "Booking #{order_id} is already paid."
+err_order_closed = "Booking #{order_id} is closed, so a receipt can't be attached to it."
+err_payment_not_found = "Payment not found."
+err_already_reviewed = "This receipt has already been processed."
+err_payments_not_configured = "Payments are temporarily unavailable: the organizer hasn't added a card yet. Please try again later."
+err_not_enough_seats = "Not that many seats left — please choose fewer."
+err_foreign_contact = "Please send your own number using the button below."
+err_receipt_format = "Please send the receipt as a photo, image or PDF (up to 20 MB)."
+
+# --- Event cancellation & reminders ---
+event_cancelled = "😔 The event “{title}” has been cancelled. Your booking #{order_id} has been cancelled too."
+event_cancelled_refund = "😔 The event “{title}” has been cancelled. We'll refund booking #{order_id} — a moderator will contact you. Questions: {support}"
+reminder_24h = """⏰ Reminder: “{title}”
+📅 {when}
+📍 {place}
+
+Your ticket is in “🎫 My tickets”."""
+reminder_3h = """⏰ Starting soon: “{title}”
+📅 {when}
+📍 {place}
+
+Don't forget your QR ticket!"""
+
+# --- Moderation (moderation chat language = DEFAULT_LANG) ---
+mod_title = "🧾 <b>Receipt to review · order #{order_id}</b>"
+mod_event = "Event: {title} ({when})"
+mod_ticket = "Ticket: {type} × {qty}"
+mod_amount = "Amount: <b>{amount}</b> to card {card}"
+mod_buyer = "Buyer: {name} · {username} · {phone} · id <code>{tg_id}</code>"
+mod_attempt = "Attempt: {n} of {max}"
+mod_duplicate = "⚠️ This exact file was already sent for orders: {orders}"
+mod_no_seats = "⚠️ The booking has expired and there are no free seats — approving it will require a refund."
+mod_btn_approve = "✅ Approve"
+mod_btn_reject = "❌ Reject"
+mod_btn_refunded = "💸 Refund done"
+reject_btn_amount = "Amount doesn't match"
+reject_btn_unreadable = "Receipt unreadable"
+reject_btn_not_found = "Payment not received"
+reject_btn_other = "Other reason"
+mod_done = "Done"
+mod_result_approved = "✅ Approved — {by}, {at}"
+mod_result_rejected = "❌ Rejected ({reason}) — {by}, {at}"
+mod_result_refund_required = "⚠️ Approved, but no seats left — refund needed. {by}, {at}"
+mod_result_refunded = "💸 Refunded — {by}, {at}"
+mod_refund_cancelled_event = """💸 <b>Refund: event cancelled</b>
+Order #{order_id} · {title}
+Amount: <b>{amount}</b>
+Buyer: {name} · {username} · {phone}"""
+
+# --- Admin panel ---
+adm_menu = """⚙️ <b>Admin panel</b>
+
+Open events: {upcoming}
+Receipts to review: {review}
+Tickets issued: {tickets}
+Revenue: {revenue}"""
+adm_btn_events = "📅 Events"
+adm_btn_new_event = "➕ New event"
+adm_btn_card = "💳 Payment card"
+adm_btn_modchat = "🛡 Moderation chat"
+adm_btn_staff = "👥 Team"
+adm_btn_stats = "📊 Stats"
+adm_stats = """📊 <b>Stats</b>
+
+Users: {users}
+Paid orders: {paid_orders}
+Tickets issued: {tickets}
+Revenue: {revenue}
+Receipts to review: {review}"""
+adm_events_title = "Events ({n}): 🟢 published · 📝 draft · 🏁 past"
+adm_events_empty = "No events yet."
+adm_status_draft = "📝 draft"
+adm_status_published = "🟢 published"
+adm_status_cancelled = "❌ cancelled"
+adm_types_header = "<b>Tickets:</b>"
+adm_type_line = "• {name} — {price}: {sold} sold, {held} on hold, {capacity} total"
+adm_hidden = "(hidden)"
+adm_revenue = "💰 Revenue: <b>{amount}</b>"
+adm_checked_in = "🚪 Checked in: {n} of {total}"
+adm_review_refunds = "🧾 Receipts to review: {review} · 💸 Awaiting refund: {refunds}"
+adm_share_link = "🔗 Link to share: {link}"
+adm_btn_publish = "🟢 Publish"
+adm_btn_unpublish = "⏸ Unpublish"
+adm_btn_edit = "✏️ Edit"
+adm_btn_types = "🎟 Ticket types"
+adm_btn_broadcast = "📣 Broadcast"
+adm_btn_cancel_event = "❌ Cancel event"
+adm_btn_cancel_event_yes = "Yes, cancel the event"
+adm_btn_send = "📤 Send"
+adm_btn_add_type = "➕ Add ticket type"
+adm_btn_hide = "🚫 Stop sales"
+adm_btn_show = "✅ Resume sales"
+adm_err_no_types = "Add at least one ticket type first."
+adm_no_participants = "No attendees yet."
+adm_broadcast_prompt = "Send the broadcast text for all ticket holders of this event. Formatting will be kept."
+adm_broadcast_confirm = "{n} people will get this message. Send it?"
+adm_broadcast_done = "Broadcast finished: delivered {sent} of {total}."
+adm_cancel_event_confirm = "Cancel the event? Open bookings will be released, tickets voided, attendees notified, and paid orders added to the refund list. This can't be undone."
+adm_edit_choose = "What do you want to change?"
+field_poster = "Poster"
+field_map = "Map"
+field_tt_name = "Name"
+field_tt_price = "Price"
+field_tt_capacity = "Seats"
+edit_prompt_poster = "Send a new poster (photo) or “-” to remove it:"
+edit_prompt_map = "Send a location or a map link (“-” to remove):"
+edit_prompt_tt_price = "New price in UZS (0 = free). Existing bookings keep the old price:"
+edit_prompt_tt_capacity = "New number of seats:"
+edit_err_photo = "Please send a photo or “-”."
+edit_err_capacity_below_reserved = "Seats can't go below what's already sold and on hold."
+adm_types_title = """Ticket types for “{title}”
+(taken / total):"""
+adm_type_card = """<b>{name}</b>
+Price: {price}
+Seats: {capacity}
+Taken (sold + on hold): {reserved}
+Available: {available}"""
+tt_prompt_price = "Price in UZS (0 = free):"
+tt_prompt_capacity = "How many seats for this type?"
+
+# --- New event wizard ---
+wiz_btn_draft = "💾 Save as draft"
+wiz_err_title = "The title must be 3 to 255 characters long."
+wiz_err_date = "Couldn't read the date. Example: <code>25.10.2026 19:00</code>"
+wiz_err_past = "This date has already passed."
+wiz_err_location = "Send a location, a link (http…) or “-”."
+wiz_err_price = "Enter the amount as a number, e.g. <code>150000</code>."
+wiz_err_capacity = "Enter a whole number from 1 to 100,000."
+
+# --- Payment card ---
+adm_card_current = """💳 <b>Payment card</b>
+
+<code>{number}</code>
+Recipient: {holder}
+Bank: {bank}"""
+adm_card_none = "💳 No payment card set — paid bookings are unavailable."
+adm_btn_card_edit = "✏️ Change card"
+adm_card_prompt_number = "Card number (16 digits):"
+adm_card_err_number = "Exactly 16 digits, please."
+adm_card_prompt_holder = "Recipient name as the bank shows it (or “-”):"
+adm_card_prompt_bank = "Bank (or “-”):"
+
+# --- Moderation chat ---
+adm_modchat_current = "🛡 Moderation chat: <b>{title}</b>"
+adm_modchat_none = "🛡 No moderation chat connected — receipts go to admins in private messages."
+adm_modchat_howto = """How to connect: create a private channel or group for moderators and add the bot there as an admin (with permission to post and edit messages) — the bot will offer to use that chat.
+
+Receipts can be approved by that chat's admins and the bot's admins."""
+adm_btn_modchat_test = "🔄 Test access"
+adm_modchat_test_msg = "✅ This chat is connected for Focused receipt moderation."
+adm_modchat_test_ok = "The bot can post in the moderation chat ✅"
+adm_modchat_test_fail = "The bot can't post in the chat: {error}"
+adm_modchat_offer = "The bot was added to “{title}”. Use this chat for receipt moderation?"
+adm_modchat_use = "✅ Yes, use it"
+
+# --- Team ---
+adm_staff_title = """👥 <b>Team</b>
+👑 admin · 🎫 ticket checker (scans tickets at the door)
+"""
+adm_btn_add_staff = "➕ Add ticket checker"
+adm_btn_add_admin = "➕ Add admin"
+adm_btn_pick_user = "👤 Pick a user"
+adm_staff_pick_prompt = "Tap the button below and pick a person from your contacts."
+
+# --- Added after review ---
+err_user_limit = "One person can hold at most {max} tickets for an event."
+err_own_order = "You can't decide on your own order."
+err_super_only = "Only the bot owner (ADMIN_IDS) can change this."
+mod_late = "⏰ Receipt sent {minutes} min after the booking expired."
+mod_price_changed = "⚠️ Price changed: {old} in the order, {new} now."
+mod_event_cancelled = "⚠️ Event cancelled — approving means a refund."
+event_cancelled_review = "😔 “{title}” has been cancelled. Your receipt for booking #{order_id} will still be checked, and if the payment arrived we'll refund it. Questions: {support}"
+adm_alert_ticket_stuck = "⚠️ Ticket {code} (order #{order_id}) couldn't be delivered after 10 attempts. The buyer may have blocked the bot — contact them."
+adm_alert_stale_reviews = "⏰ Receipts waiting longer than usual: {n} ({orders}). List: ⚙️ Admin → 🧾 Pending receipts."
+adm_card_changed = "⚠️ Payment card changed ({by}): {old} → {new}. If you didn't expect this, check your admins now."
+adm_modchat_changed = "ℹ️ Moderation chat changed ({by}): {title}."
+adm_modchat_err_unsafe = "This chat can't be used: it's public or you're not its admin."
+adm_btn_reviews = "🧾 Pending receipts"
+adm_btn_refunds = "💸 Refunds"
+adm_reviews_title = "Receipts without a decision: {n}. Tap one to re-post it to the moderation chat."
+adm_reviews_empty = "All receipts are handled ✅"
+adm_repost_ok = "Posted to the moderation chat"
+adm_repost_fail = "Couldn't post: check the moderation chat."
+adm_refunds_title = "Waiting for refund: {n}"
+adm_refunds_empty = "No refunds pending ✅"
+adm_refund_line = """#{order_id} · {title}
+{amount} · {name} · {phone}"""
+adm_btn_refund_done = "✅ Refunded #{order_id}"
+err_already_registered = "You're already registered for this event — your ticket is in “🎫 My tickets”."
+already_registered = "✅ You're registered. Your ticket is in “🎫 My tickets”."
+ci_cancelled_alert = "This ticket is cancelled — no entry with it."
+payment_approved_event_cancelled = "We received the payment for booking #{order_id}, but “{title}” has been cancelled 😔 We'll refund you — a moderator will contact you."
+adm_broadcast_too_long = "Too long: keep it under 3500 characters."
+
+# --- Event form ---
+form_title = "Title"
+form_description = "Description"
+form_venue = "Venue"
+form_starts_at = "Date and time"
+form_map = "Map"
+form_price = "Price"
+form_capacity = "Seats"
+form_intro = """<b>New event</b>
+
+Copy the form below (tap it), fill it in and send it back as one message.
+
+• Write under each [bracketed] heading; don't change the headings.
+• Required: Title RU, Venue RU, Date and time, Price, Seats.
+• An empty UZ/EN translation or “-” means users see the Russian text.
+• Date: <code>25.10.2026 19:00</code>, Tashkent time. Price in UZS, 0 = free.
+• Map: a link or “-”.
+
+You'll send the poster in the next step."""
+form_example_intro = "Example:"
+form_btn_example = "📋 Example"
+form_errors = """Couldn't read the form:
+{errors}
+
+Fix it and send the whole form again."""
+form_err_no_sections = "No [bracketed] headings found. Copy the form and fill it in."
+form_err_unknown = "Unknown heading [{label}]"
+form_err_missing = "Missing: {label}"
+form_err_too_long = "{label}: longer than {max} characters"
+form_too_long_hint = "The form is over 3900 characters — Telegram may have split it into several messages. Shorten the descriptions."
+form_send_text = "Send the form as text, in one message."
+form_ask_poster = "Form accepted ✅ Now send the poster (as a photo, not a file) or tap “Skip”."
+form_preview_header = "<b>Check the event</b>"
+form_preview_capacity = "🎟 Seats: {n}"
+form_missing = "⚠️ Not translated (Russian text will be shown): {fields}"
+form_btn_fix = "✏️ Fix the form"
+form_fix_intro = "Your form is below — copy it, fix it and send it again."
+form_edit_intro = "The event's current data is below. Copy the form, change what you need and send it as one message. Price and seats are changed in “🎟 Ticket types”."
+adm_btn_edit_form = "📝 Texts, date, map"
+tt_prompt_name = "Ticket type name in three languages separated by “ / ”, e.g. <code>Студенческий / Talaba / Student</code>. One name = all languages."
+edit_prompt_tt_name = "New name in three languages separated by “ / ”: <code>RU / UZ / EN</code>. One name = all languages."
+tt_err_names = "Give one name, or three separated by “ / ”: RU / UZ / EN."
+
+# --- Excel report ---
+adm_btn_export = "📊 Report (Excel)"
+adm_export_caption = "Report for “{title}”: participants and orders. Opens in Excel and Google Sheets."
+xls_sheet_participants = "Participants"
+xls_sheet_orders = "Orders"
+xls_participants_headers = "#|Ticket code|Holder|Phone|Telegram|Ticket type|Status|Checked in|Order #|Paid"
+xls_orders_headers = "Order #|Status|Buyer|Phone|Telegram|Ticket type|Qty|Amount, UZS|Card|Payment method|Created|Paid|Moderator"
+xls_summary = "Tickets sold: {sold} · Checked in: {checked} · Revenue: {revenue}"
+xls_generated = "Exported {at}"
+xls_ticket_valid = "Valid"
+xls_ticket_used = "Checked in"
+xls_ticket_cancelled = "Cancelled"
+xls_method_card_transfer = "Card transfer"
+xls_method_free = "Free"
+
+# --- Google Sheets ---
+adm_btn_gsheet = "📗 Google Sheet"
+xls_col_event = "Event"
+gs_tab_orders = "All orders"
+gs_status_no_key = "📗 Google Sheets is not connected: no service account key. How to get one: docs/GOOGLE_SHEETS.md."
+gs_status = """📗 <b>Google Sheet</b>
+
+Service account: <code>{email}</code>
+Spreadsheet: {sheet}
+Last sync: {last}
+
+The bot keeps a tab per event (participants) plus an “All orders” tab, updated every couple of minutes."""
+gs_no_sheet = "not set"
+gs_never = "not yet"
+gs_error_line = "⚠️ Error: {error}"
+gs_btn_set = "🔗 Set spreadsheet"
+gs_btn_sync = "🔄 Sync now"
+gs_btn_open = "Open spreadsheet"
+gs_syncing = "Syncing…"
+gs_synced = "✅ Synced, tabs updated: {n}."
+gs_prompt_link = """1. Create an empty Google Sheet.
+2. Share → add <code>{email}</code> as Editor.
+3. Send the spreadsheet link here."""
+gs_err_link = "That doesn't look like a Google Sheets link. Send one like https://docs.google.com/spreadsheets/d/…"
+gs_err_access = "The bot can't open the spreadsheet: {error}. Make sure it's shared with <code>{email}</code> as Editor."
+gs_connected = "✅ Spreadsheet “{title}” connected. Running the first sync…"
+gs_changed = "ℹ️ Report spreadsheet changed ({by}): {url}"
+gs_alert_failed = "⚠️ Google Sheets sync is failing: {error}"
+
+# --- Manual ticket issuance ---
+adm_btn_issue = "🎫 Issue ticket"
+adm_type_issued = ", issued manually {n}"
+xls_method_manual = "Issued manually"
+issue_choose_type = "Which ticket to issue? 🚫 means the type is hidden from sale but can still be issued."
+issue_choose_qty = "How many “{type}” tickets? Available: {n}."
+issue_no_seats = "No seats left in this type. Raise the seat count in “🎟 Ticket types” or add a separate type such as “Guest”."
+issue_prompt_recipient = """Who gets the ticket?
+
+• Type the guest's name as it should appear on the ticket, optionally with a phone: <code>John Smith, +998901234567</code>. The ticket comes to you to forward.
+• Or tap “👤 Pick from Telegram” — the ticket goes straight to that person in the bot."""
+issue_btn_pick = "👤 Pick from Telegram"
+issue_err_name = "Give the guest's name (2 to 100 characters). Add a phone after a comma if you like."
+issue_recipient_ok = "Recipient selected."
+issue_confirm = """<b>Issue the ticket?</b>
+
+Event: {title}
+Ticket: {type} × {qty}
+Name: {holder}
+Delivery: {dest}
+
+A seat is taken from the event's capacity; no payment needed."""
+issue_dest_tg = "to {user} in Telegram"
+issue_dest_admin = "to you, to forward to the guest"
+issue_btn_go = "✅ Issue"
+issue_tg_failed = "{user} hasn't opened the bot yet, so Telegram won't let the bot message them first. The ticket was sent to you — please forward it."
+issue_done_sent = "✅ Ticket sent to {user}. Code: {codes}"
+issue_done_forward = "✅ Ticket issued, code: {codes}. Forward the image above to the guest."
